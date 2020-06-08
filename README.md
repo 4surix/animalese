@@ -17,6 +17,33 @@ Ces éléments sont nécessaires au bon fonctionnement :
 - [`pyhub`](https://pypi.org/project/pyhub/)
 - [`ffmpeg`](https://ffmpeg.org/download.html)
 
+# Comment rajouter des fichiers audios ?
+
+**De base le module n'a pas de fichier audio**.  
+  
+Vous pouvez en trouver avec : le [site sounds-resource](https://www.sounds-resource.com/wii/ssbb/sound/27087/), la [vidéo d'henryishuman](https://www.youtube.com/watch?v=IKMjg2fEGgE) dans laquel ses audios en description m'ont servi pour tester le module, ou encore le [projet Github d'equalo-official](https://github.com/equalo-official/animalese-generator).  
+
+Sinon vous pouvez faire aussi vos propres fichiers audios avec un logiciel d'enregistrement.  
+  
+Ensuite il suffira de créer un dossier portant le nom de la langue dans laquel les enregistrements ont été fait.  
+Dedans vous mettrez les enregistrements audios. Chaque fichier devra avoir comme nom le caractère correspondent à l'audio.  
+  
+Cela doit ressembler à ça :
+```
+animalese
+|- audios
+|  |- en
+|  |  |- a.wav
+|  |  |- b.wav
+|  |  |- c.wav
+|  |  |- ...
+|  |- fr
+|  |  |- a.wav
+|  |  |- b.wav
+|  |  |- c.wav
+|  |  |- ...
+```
+
 # Documentation
 
 ## convertie_texte_vers_audio(texte, langue) -> Audio
@@ -27,7 +54,7 @@ Le texte à convertir en audio.
 
 ### langue
 
-La langue de l'audio à utiliser.
+La langue de l'audio à utiliser et donc le nom du dossier avec les fichiers audios de cette langue.  
 L'Animalese n'est pas construit de la même manière suivant la langue.
 Vous pouvez utiliser du texte de n'importe quelle langue avec un audio de n'importe quelle langue, mais cela sera moins réaliste.
 
@@ -54,7 +81,7 @@ La phrase à convertir en audio.
 
 ### langue
 
-La langue de l'audio à utiliser.
+La langue de l'audio à utiliser, et donc le nom du dossier avec les fichiers audios de cette langue.  
 L'Animalese n'est pas construit de la même manière suivant la langue.
 Vous pouvez utiliser du texte de n'importe quelle langue avec un audio de n'importe quelle langue, mais cela sera moins réaliste. 
 
@@ -105,12 +132,3 @@ import animalese
 
 animalese.ajout_chemin_app(ffmpeg='utile/app')
 ```
-
-# Source
-
-Projets qui ont servi de base pour ce module :
-- [Projet Github de equalo-official](https://github.com/equalo-official/animalese-generator)
-- [Vidéo de henryishuman](https://www.youtube.com/watch?v=IKMjg2fEGgE)
-  
-Audios :
-- [Site sounds-resource](https://www.sounds-resource.com/wii/ssbb/sound/27087/)
